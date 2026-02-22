@@ -183,7 +183,9 @@ if st.button("🚀 Treinar Agente neste Mapa"):
         st.session_state['grid_teste'] = [linha[:] for linha in st.session_state['grid_base']]
         
         mapa_estado = tuple(tuple(linha) for linha in st.session_state['grid_teste'])
-        st.session_state['estado_atual'] = (0, 0, mapa_estado)
+        x_inicial = random.randint(0, tamanho_grid - 1)
+        y_inicial = random.randint(0, tamanho_grid - 1)
+        st.session_state['estado_atual'] = (x_inicial, y_inicial, mapa_estado)
         
         st.session_state['minerios_coletados'] = 0
         st.session_state['passos'] = 0
